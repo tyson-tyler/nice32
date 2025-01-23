@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { motion, MotionProps } from "motion/react";
@@ -23,16 +24,19 @@ export function LineShadowText({
     setIsClient(true);
   }, []);
 
-  const MotionComponent = isClient ? motion.create(Component) : "span";
   const content = typeof children === "string" ? children : null;
 
   if (!content) {
     throw new Error("LineShadowText only accepts string content");
   }
 
+  const CustomComponent = isClient ? motion(Component) : Component;
+
   return (
-    <MotionComponent
-      style={{ "--shadow-color": shadowColor } as React.CSSProperties}
+    <CustomComponent
+      style={
+        { "--shadow-color": shadowColor } as React.CSSProperties & MotionProps
+      }
       className={cn(
         "relative z-0 inline-flex",
         "after:absolute after:left-[0.04em] after:top-[0.04em] after:content-[attr(data-text)]",
@@ -45,6 +49,6 @@ export function LineShadowText({
       {...props}
     >
       {content}
-    </MotionComponent>
+    </CustomComponent>
   );
 }
