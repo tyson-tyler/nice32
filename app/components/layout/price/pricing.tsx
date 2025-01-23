@@ -24,7 +24,7 @@ const Pricing = () => {
           </span>
         </h2>
         <p className="text-base text-gray-700 md:text-lg font-bold">
-          Choose the plan that's right for you
+          Choose the plan that right for you
         </p>
       </div>
 

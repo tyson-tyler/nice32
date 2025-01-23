@@ -6,12 +6,7 @@ import { brainwaveServices, brainwaveServicesIcons } from "./tense/nut";
 import Check from "../layout/tense/get/check.svg";
 import Loader from "../layout/tense/get/loader.gif";
 import logo from "../layout/tense/get/broke.jpg";
-import {
-  Gradient,
-  PhotoChatMessage,
-  VideoBar,
-  VideoChatMessage,
-} from "./tense/dance";
+import { Gradient, PhotoChatMessage, VideoBar } from "./tense/dance";
 import Hello from "../layout/tense/get/kill.jpg";
 
 const Service = () => {
