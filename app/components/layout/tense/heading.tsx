@@ -1,6 +1,19 @@
+import React from "react";
 import TagLine from "./tag";
 
-const Heading = ({ className, title, text, tag }: any) => {
+interface HeadingProps {
+  className?: string;
+  title?: string;
+  text?: string;
+  tag?: React.ReactNode;
+}
+
+const Heading: React.FC<HeadingProps> = ({
+  className = "",
+  title,
+  text,
+  tag,
+}) => {
   return (
     <div
       className={`${className} w-full mx-auto mb-12 lg:mb-20 md:text-center`}

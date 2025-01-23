@@ -18,6 +18,7 @@ export function ModeToggle() {
   if (!mounted) {
     // Avoid rendering during SSR
     return null;
+    console.log(theme);
   }
 
   const toggleTheme = () => {

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Main } from "./components/layout/main";
 import { Empower } from "./components/layout/empower";
 import Review from "./components/layout/power/review";
-
 import MyAimixSlider from "./components/layout/slider";
 import World from "./components/layout/world/world";
 import Banner from "./components/layout/banner/banner";
@@ -14,7 +13,12 @@ import BlogSection from "./components/layout/blog/blog";
 import FAQSection from "./components/layout/faq/faq";
 import Footer from "./components/layout/footer/footer";
 
-const ClientOnlyComponent = ({ Component }) => {
+// Fix the type for Component prop
+const ClientOnlyComponent = ({
+  Component,
+}: {
+  Component: React.ComponentType;
+}) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

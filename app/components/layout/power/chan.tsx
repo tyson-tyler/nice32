@@ -8,11 +8,25 @@ import West3 from "./avatar/west (3).png";
 import West4 from "./avatar/west (4).png";
 import West5 from "./avatar/west (5).png";
 import West12 from "./avatar/west (12).png";
-
 import Marquee from "@/components/ui/marquee";
+import { StaticImageData } from "next/image";
+
+// TypeScript type for review data
+interface Review {
+  name: string;
+  username: string;
+  description: string;
+  img: StaticImageData; // Path to the image
+  rating: number; // Star rating
+}
+
+// TypeScript type for StarRating props
+interface StarRatingProps {
+  rating: number;
+}
 
 // Star Rating SVG Component
-const StarRating = ({ rating }) => {
+const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   return (
     <div className="flex space-x-1">
       {[...Array(5)].map((_, index) => (
@@ -34,15 +48,15 @@ const StarRating = ({ rating }) => {
   );
 };
 
-const CardsT = () => {
-  const reviews = [
+const CardsT: React.FC = () => {
+  const reviews: Review[] = [
     {
       name: "John Doe",
       username: "johndoe",
       description:
         "This product is amazing! It has completely transformed the way I approach my daily tasks. The quality and attention to detail are unmatched. I highly recommend it to everyone looking for something reliable and effective.",
       img: Nice,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Jane Smith",
@@ -50,7 +64,7 @@ const CardsT = () => {
       description:
         "The best purchase I’ve made in a long time. From the packaging to the product itself, everything was top-notch. It exceeded my expectations in every way. Five stars for sure!",
       img: Cool,
-      rating: 4, // 5 stars rating
+      rating: 4,
     },
     {
       name: "Chris West",
@@ -58,7 +72,7 @@ const CardsT = () => {
       description:
         "Absolutely love it. This product offers great value for money. It has made my daily routine so much easier, and I can’t imagine going back to how things were before.",
       img: West1,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Sarah Lee",
@@ -66,7 +80,7 @@ const CardsT = () => {
       description:
         "Exceeded my expectations. The quality is fantastic, and it works perfectly for my needs. I appreciate the thoughtfulness put into every aspect of this product.",
       img: West2,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Michael Scott",
@@ -74,7 +88,7 @@ const CardsT = () => {
       description:
         "Fantastic quality and speedy delivery. I was pleasantly surprised by how quickly it arrived and how well it was packaged. This product has been a great addition to my tools.",
       img: West3,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Olivia Brown",
@@ -82,7 +96,7 @@ const CardsT = () => {
       description:
         "A great investment! This product has truly improved my workflow and the quality is amazing. It’s now an essential part of my routine. Highly recommend!",
       img: West4,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Ethan White",
@@ -90,7 +104,7 @@ const CardsT = () => {
       description:
         "Exceeded all expectations! The design is sleek, the product is functional, and it has worked flawlessly since the moment I started using it. Worth every penny.",
       img: West5,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
     {
       name: "Charlotte Harris",
@@ -98,12 +112,12 @@ const CardsT = () => {
       description:
         "I am extremely satisfied with this product. It’s a must-have for anyone looking for efficiency and reliability. I can’t imagine going without it now.",
       img: West12,
-      rating: 5, // 5 stars rating
+      rating: 5,
     },
   ];
 
   return (
-    <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg  md:shadow-xl">
+    <div className="relative flex h-[600px] w-full flex-col items-center justify-center overflow-hidden rounded-lg md:shadow-xl">
       <Marquee pauseOnHover className="[--duration:20s]">
         <div className="grid max-w-[120rem] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
           {reviews.map((review, index) => (
@@ -123,4 +137,5 @@ const CardsT = () => {
     </div>
   );
 };
+
 export default CardsT;

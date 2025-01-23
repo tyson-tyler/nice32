@@ -1,43 +1,125 @@
 import React from "react";
 import "./style.css";
-
-// Make sure to import the external CSS if you have any
-
 import Image from "next/image";
+
 const Banner = () => {
   return (
     <div>
       <div className="banner">
-        <div className="slider" style={{ "--quantity": 10 }}>
-          <div className="item" style={{ "--position": 1 }}>
-            <Image src="/banner/nice.jpg" alt="Banner image 1" />
+        {/* Add type assertion to fix TypeScript error with custom properties */}
+        <div
+          className="slider"
+          style={{ "--quantity": 10 } as React.CSSProperties}
+        >
+          <div
+            className="item"
+            style={{ "--position": 1 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice.jpg"
+              alt="Banner image 1"
+              width={500}
+              height={300} // Provide fixed width and height
+            />
           </div>
-          <div className="item" style={{ "--position": 2 }}>
-            <Image src="/banner/nice1.jpg" alt="Banner image 2" />
+          <div
+            className="item"
+            style={{ "--position": 2 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice1.jpg"
+              alt="Banner image 2"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 3 }}>
-            <Image src="/banner/nice2.jpg" alt="Banner image 3" />
+          <div
+            className="item"
+            style={{ "--position": 3 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice2.jpg"
+              alt="Banner image 3"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 4 }}>
-            <Image src="/banner/nice3.jpg" alt="Banner image 4" />
+          <div
+            className="item"
+            style={{ "--position": 4 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice3.jpg"
+              alt="Banner image 4"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 5 }}>
-            <Image src="/banner/nice4.jpg" alt="Banner image 5" />
+          <div
+            className="item"
+            style={{ "--position": 5 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice4.jpg"
+              alt="Banner image 5"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 6 }}>
-            <Image src="/banner/nice5.jpg" alt="Banner image 6" />
+          <div
+            className="item"
+            style={{ "--position": 6 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice5.jpg"
+              alt="Banner image 6"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 7 }}>
-            <Image src="/banner/nice6.jpg" alt="Banner image 7" />
+          <div
+            className="item"
+            style={{ "--position": 7 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice6.jpg"
+              alt="Banner image 7"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 8 }}>
-            <Image src="/banner/nice7.jpg" alt="Banner image 8" />
+          <div
+            className="item"
+            style={{ "--position": 8 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice7.jpg"
+              alt="Banner image 8"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 9 }}>
-            <Image src="/banner/nice8.jpg" alt="Banner image 9" />
+          <div
+            className="item"
+            style={{ "--position": 9 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice8.jpg"
+              alt="Banner image 9"
+              width={500}
+              height={300}
+            />
           </div>
-          <div className="item" style={{ "--position": 10 }}>
-            <Image src="/banner/nice9.jpg" alt="Banner image 10" />
+          <div
+            className="item"
+            style={{ "--position": 10 } as React.CSSProperties}
+          >
+            <Image
+              src="/banner/nice9.jpg"
+              alt="Banner image 10"
+              width={500}
+              height={300}
+            />
           </div>
         </div>
         <div className="content">

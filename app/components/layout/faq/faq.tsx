@@ -2,9 +2,9 @@
 import { useState } from "react";
 
 const FAQSection = () => {
-  const [openQuestion, setOpenQuestion] = useState(null);
+  const [openQuestion, setOpenQuestion] = useState<null | number>(null);
 
-  const toggleQuestion = (index) => {
+  const toggleQuestion = (index: number) => {
     setOpenQuestion(openQuestion === index ? null : index);
   };
 
@@ -32,7 +32,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-10 bg-gray-950 te sm:py-16 lg:py-24">
+    <section className="py-10 bg-gray-950 sm:py-16 lg:py-24">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="text-green-900 font-semibold text-center">FAQ</div>
         <div className="max-w-2xl mx-auto text-center">
@@ -79,7 +79,7 @@ const FAQSection = () => {
             </div>
           ))}
         </div>
-        <p className="text-center text-gray-600 textbase mt-9">
+        <p className="text-center text-gray-600 text-base mt-9">
           Still have questions?{" "}
           <span className="cursor-pointer font-medium text-tertiary transition-all duration-200 hover:text-tertiary focus:text-tertiary hover-underline">
             Contact our support

@@ -1,6 +1,5 @@
 "use client";
-
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { RefObject, useEffect, useId, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -45,8 +44,14 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   endYOffset = 0,
 }) => {
   const id = useId();
-  const [pathD, setPathD] = useState("");
-  const [svgDimensions, setSvgDimensions] = useState({ width: 0, height: 0 });
+  const [pathD, setPathD] = useState<string>(""); // Explicitly type state as string
+  const [svgDimensions, setSvgDimensions] = useState<{
+    width: number;
+    height: number;
+  }>({
+    width: 0,
+    height: 0,
+  }); // Explicitly type state for SVG dimensions
 
   // Calculate the gradient coordinates based on the reverse prop
   const gradientCoordinates = reverse
@@ -130,7 +135,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       xmlns="http://www.w3.org/2000/svg"
       className={cn(
         "pointer-events-none absolute left-0 top-0 transform-gpu stroke-2",
-        className,
+        className
       )}
       viewBox={`0 0 ${svgDimensions.width} ${svgDimensions.height}`}
     >
